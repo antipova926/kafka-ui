@@ -27,6 +27,14 @@ $navbar-width: 250px;
     padding: 20px 20px;
     overflow-y: scroll;
   }
+
+  &__alerts {
+    max-width: 40%;
+    width: 500px;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+  }
 }
 
 .react-datepicker-wrapper {

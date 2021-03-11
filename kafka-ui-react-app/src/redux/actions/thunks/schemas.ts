@@ -52,8 +52,14 @@ export const createSchema = (
       newSchemaSubject,
     });
     dispatch(actions.createSchemaAction.success(schema));
-  } catch (e) {
-    dispatch(actions.createSchemaAction.failure());
-    throw e;
+  } catch (error) {
+    dispatch(
+      actions.createSchemaAction.failure({
+        error,
+        title: `Schema ${newSchemaSubject.subject}`,
+        subject: 'schema',
+        subjectId: newSchemaSubject.subject,
+      })
+    );
   }
 };

@@ -1,5 +1,5 @@
 import { createAsyncAction } from 'typesafe-actions';
-import { ConsumerGroupID, TopicsState } from 'redux/interfaces';
+import { ConsumerGroupID, TopicsState, FailurePayload } from 'redux/interfaces';
 
 import {
   Cluster,
@@ -111,4 +111,4 @@ export const createSchemaAction = createAsyncAction(
   'POST_SCHEMA__REQUEST',
   'POST_SCHEMA__SUCCESS',
   'POST_SCHEMA__FAILURE'
-)<undefined, SchemaSubject, undefined>();
+)<undefined, SchemaSubject, FailurePayload>();

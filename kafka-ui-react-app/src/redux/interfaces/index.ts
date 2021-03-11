@@ -1,3 +1,4 @@
+import React from 'react';
 import { ActionType } from 'typesafe-actions';
 import { ThunkAction } from 'redux-thunk';
 
@@ -9,6 +10,7 @@ import { BrokersState } from './broker';
 import { LoaderState } from './loader';
 import { ConsumerGroupsState } from './consumerGroup';
 import { SchemasState } from './schema';
+import { AlertsState } from './alerts';
 
 export * from './topic';
 export * from './cluster';
@@ -16,6 +18,7 @@ export * from './broker';
 export * from './consumerGroup';
 export * from './schema';
 export * from './loader';
+export * from './alerts';
 
 export interface RootState {
   topics: TopicsState;
@@ -24,6 +27,15 @@ export interface RootState {
   consumerGroups: ConsumerGroupsState;
   schemas: SchemasState;
   loader: LoaderState;
+  alerts: AlertsState;
+}
+
+export interface FailurePayload {
+  error: Error;
+  title: string;
+  subject: string;
+  subjectId: string;
+  message?: React.ReactNode;
 }
 
 export type Action = ActionType<typeof actions>;
